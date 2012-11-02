@@ -1,0 +1,814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>AEProject - Battle Calculator and Skins for Astro Empires</title>
+	<meta name="keywords" content="aeproject,astroempires,astro empires,project,astro,empires,AE,battle calculator,battle,calculator,battlecalc,greasemonkey,interface">
+	<meta name="description " content="Battle Calculator and Skins for Astro Empires.">
+	<link href="favicon.png" type="image/x-icon" rel="icon">
+	<link href="favicon.png" type="image/x-icon" rel="shortcut icon">
+	<link href="styles/common.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			<h1><a href="index.html">AEProject</a></h1>
+			<span class="sub_title">Powered by Kissy - Guillaume Leonhart</span>
+		</div>
+		<div class="menubar">
+			<div class="float-left genmed">
+				<a href="index.html">Battle&nbsp;Calculator</a>&nbsp; &nbsp;
+				<a href="skins.html">Skins</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<h2>Calculators</h2>
+		<br>
+<table>
+	<thead>
+		<tr><th class="header" colspan="4">CONTROLS</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="left-side"><a href="javascript:void(0);" id="resetATKTech">Reset ATK Tech</a></td>
+			<td><a href="javascript:void(0);" id="resetATKFleet">Reset ATK Fleet</a></td>
+			<td><a href="javascript:void(0);" id="resetDEFTech">Reset DEF Tech</a></td>
+			<td class="right-side"><a href="javascript:void(0);" id="resetDEFFleet">Reset DEF Fleet</a></td>
+		</tr>
+		<tr>
+			<td class="left-side"><a href="javascript:void(0);" id="resetAll">Reset All</a></td>
+			<td><a href="javascript:void(0);" id="pastData" rel="#pastDataOverlay">Past Data</a></td>
+			<td><a href="javascript:void(0);" id="previousRound">Previous Wave</a></td>
+			<td class="right-side"><a href="javascript:void(0);" id="nextRound">Next Wave</a></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><td colspan="4" class="footer"></td></tr>
+	</tfoot>
+</table>
+
+<br>
+
+<table id="ATKTech">
+	<thead>
+		<tr>
+			<th class="header" colspan="3">ATTACKER'S TECHNOLOGY</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="section">
+			<th class="left-side" width="40%">Research</th>
+			<th width="30%">Level</th>
+			<th class="right-side" width="30%">Bonus</th>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Armour</td>
+			<td><input type="text" size="5" value="0" name="0" class="tech_1" id="l_10"></td>
+			<td class="right-side" id="b_10">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Laser</td>
+			<td><input type="text" size="5" value="0" name="1" class="tech_1" id="l_11"></td>
+			<td class="right-side" id="b_11">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Missiles</td>
+			<td><input type="text" size="5" value="0" name="2" class="tech_1" id="l_12"></td>
+			<td class="right-side" id="b_12">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Plasma</td>
+			<td><input type="text" size="5" value="0" name="3" class="tech_1" id="l_13"></td>
+			<td class="right-side" id="b_13">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Shielding</td>
+			<td><input type="text" size="5" value="0" name="4" class="tech_1" id="l_14"></td>
+			<td class="right-side" id="b_14">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion</td>
+			<td><input type="text" size="5" value="0" name="5" class="tech_1" id="l_15"></td>
+			<td class="right-side" id="b_15">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Photon</td>
+			<td><input type="text" size="5" value="0" name="6" class="tech_1" id="l_16"></td>
+			<td class="right-side" id="b_16">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Disruptor</td>
+			<td><input type="text" size="5" value="0" name="7" class="tech_1" id="l_17"></td>
+			<td class="right-side" id="b_17">0</td>
+		</tr>
+				<tr>
+			<td class="content separator" colspan="3"><br></td>
+		</tr>
+		<tr>
+			<td class="left-side" align="left">Command Cters</td>
+			<td><input type="text" size="5" value="0" name="8" class="tech_1" id="l_18"></td>
+			<td class="right-side" id="b_18">0</td>
+		</tr>
+		<tr>
+			<td class="content separator" colspan="3"><br></td>
+		</tr>
+		<tr>
+			<td class="left-side" align="left">Defense Cmder</td>
+			<td><input type="text" size="5" value="0" name="9" class="cmd_1" id="l_19"></td>
+			<td class="right-side" id="b_19">0</td>
+		</tr>
+		<tr>
+			<td class="left-side" align="left">Tactical Cmder</td>
+			<td><input type="text" size="5" value="0" name="10" class="cmd_1" id="l_110"></td>
+			<td class="right-side" id="b_110">0</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><td colspan="3" class="footer"></td></tr>
+	</tfoot>
+</table>
+
+<table id="DEFTech">
+	<thead>
+		<tr>
+			<th class="header" colspan="3">DEFENDER'S TECHNOLOGY</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="section">
+			<th class="left-side" width="40%">Research</th>
+			<th width="30%">Level</th>
+			<th class="right-side" width="30%">Bonus</th>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Armour</td>
+			<td><input type="text" size="5" value="0" name="0" class="tech_2" id="l_20"></td>
+			<td class="right-side" id="b_20">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Laser</td>
+			<td><input type="text" size="5" value="0" name="1" class="tech_2" id="l_21"></td>
+			<td class="right-side" id="b_21">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Missiles</td>
+			<td><input type="text" size="5" value="0" name="2" class="tech_2" id="l_22"></td>
+			<td class="right-side" id="b_22">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Plasma</td>
+			<td><input type="text" size="5" value="0" name="3" class="tech_2" id="l_23"></td>
+			<td class="right-side" id="b_23">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Shielding</td>
+			<td><input type="text" size="5" value="0" name="4" class="tech_2" id="l_24"></td>
+			<td class="right-side" id="b_24">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion</td>
+			<td><input type="text" size="5" value="0" name="5" class="tech_2" id="l_25"></td>
+			<td class="right-side" id="b_25">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Photon</td>
+			<td><input type="text" size="5" value="0" name="6" class="tech_2" id="l_26"></td>
+			<td class="right-side" id="b_26">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Disruptor</td>
+			<td><input type="text" size="5" value="0" name="7" class="tech_2" id="l_27"></td>
+			<td class="right-side" id="b_27">0</td>
+		</tr>
+				<tr>
+			<td class="content separator" colspan="3"><br></td>
+		</tr>
+		<tr>
+			<td class="left-side" align="left">Command Cters</td>
+			<td><input type="text" size="5" value="0" name="8" class="tech_2" id="l_28"></td>
+			<td class="right-side" id="b_28">0</td>
+		</tr>
+		<tr>
+			<td class="content separator" colspan="3"><br></td>
+		</tr>
+		<tr>
+			<td class="left-side" align="left">Defense Cmder</td>
+			<td><input type="text" size="5" value="0" name="9" class="cmd_2" id="l_29"></td>
+			<td class="right-side" id="b_29">0</td>
+		</tr>
+		<tr>
+			<td class="left-side" align="left">Tactical Cmder</td>
+			<td><input type="text" size="5" value="0" name="10" class="cmd_2" id="l_210"></td>
+			<td class="right-side" id="b_210">0</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><td colspan="3" class="footer"></td></tr>
+	</tfoot>
+</table>
+
+<table id="ATKFleet">
+	<thead>
+		<tr>
+			<th class="header" colspan="6">ATTACKER'S FLEET</th>
+		</tr>
+	</thead>
+  <tbody>
+		<tr class="section">
+			<th class="left-side" width="30%">Unit</th>
+			<th width="15%">Qty</th>
+			<th width="15%">Pwr</th>
+			<th width="15%">Armr</th>
+			<th width="10%">Shld</th>
+			<th class="right-side" width="15%">Rslt</th>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Fighters</td>
+			<td><input type="text" size="5" value="0" name="0" class="qt_1" id="qt_10"></td>
+			<td id="pw_10">2</td>
+			<td id="ar_10">2</td>
+			<td id="sh_10" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_10" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Bombers</td>
+			<td><input type="text" size="5" value="0" name="1" class="qt_1" id="qt_11"></td>
+			<td id="pw_11">4</td>
+			<td id="ar_11">2</td>
+			<td id="sh_11" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_11" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Heavy Bombers</td>
+			<td><input type="text" size="5" value="0" name="2" class="qt_1" id="qt_12"></td>
+			<td id="pw_12">10</td>
+			<td id="ar_12">4</td>
+			<td id="sh_12" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_12" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion Bombers</td>
+			<td><input type="text" size="5" value="0" name="3" class="qt_1" id="qt_13"></td>
+			<td id="pw_13">12</td>
+			<td id="ar_13">4</td>
+			<td id="sh_13">1</td>
+			<td class="right-side" id="rs_13" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Corvette</td>
+			<td><input type="text" size="5" value="0" name="4" class="qt_1" id="qt_14"></td>
+			<td id="pw_14">4</td>
+			<td id="ar_14">4</td>
+			<td id="sh_14" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_14" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Recycler</td>
+			<td><input type="text" size="5" value="0" name="5" class="qt_1" id="qt_15"></td>
+			<td id="pw_15">2</td>
+			<td id="ar_15">2</td>
+			<td id="sh_15" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_15" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Destroyer</td>
+			<td><input type="text" size="5" value="0" name="6" class="qt_1" id="qt_16"></td>
+			<td id="pw_16">8</td>
+			<td id="ar_16">8</td>
+			<td id="sh_16" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_16" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Frigate</td>
+			<td><input type="text" size="5" value="0" name="7" class="qt_1" id="qt_17"></td>
+			<td id="pw_17">12</td>
+			<td id="ar_17">12</td>
+			<td id="sh_17" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_17" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion Frigate</td>
+			<td><input type="text" size="5" value="0" name="8" class="qt_1" id="qt_18"></td>
+			<td id="pw_18">14</td>
+			<td id="ar_18">12</td>
+			<td id="sh_18">1</td>
+			<td class="right-side" id="rs_18" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Scout Ship</td>
+			<td><input type="text" size="5" value="0" name="9" class="qt_1" id="qt_19"></td>
+			<td id="pw_19">1</td>
+			<td id="ar_19">2</td>
+			<td id="sh_19" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_19" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Outpost Ship</td>
+			<td><input type="text" size="5" value="0" name="10" class="qt_1" id="qt_110"></td>
+			<td id="pw_110">2</td>
+			<td id="ar_110">4</td>
+			<td id="sh_110" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_110" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Cruiser</td>
+			<td><input type="text" size="5" value="0" name="11" class="qt_1" id="qt_111"></td>
+			<td id="pw_111">24</td>
+			<td id="ar_111">24</td>
+			<td id="sh_111">2</td>
+			<td class="right-side" id="rs_111" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Carrier</td>
+			<td><input type="text" size="5" value="0" name="12" class="qt_1" id="qt_112"></td>
+			<td id="pw_112">12</td>
+			<td id="ar_112">24</td>
+			<td id="sh_112">2</td>
+			<td class="right-side" id="rs_112" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Heavy Cruiser</td>
+			<td><input type="text" size="5" value="0" name="13" class="qt_1" id="qt_113"></td>
+			<td id="pw_113">48</td>
+			<td id="ar_113">48</td>
+			<td id="sh_113">4</td>
+			<td class="right-side" id="rs_113" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Battleship</td>
+			<td><input type="text" size="5" value="0" name="14" class="qt_1" id="qt_114"></td>
+			<td id="pw_114">168</td>
+			<td id="ar_114">128</td>
+			<td id="sh_114">10</td>
+			<td class="right-side" id="rs_114" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Fleet Carrier</td>
+			<td><input type="text" size="5" value="0" name="15" class="qt_1" id="qt_115"></td>
+			<td id="pw_115">64</td>
+			<td id="ar_115">96</td>
+			<td id="sh_115">8</td>
+			<td class="right-side" id="rs_115" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Dreadnought</td>
+			<td><input type="text" size="5" value="0" name="16" class="qt_1" id="qt_116"></td>
+			<td id="pw_116">756</td>
+			<td id="ar_116">512</td>
+			<td id="sh_116">20</td>
+			<td class="right-side" id="rs_116" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Titan</td>
+			<td><input type="text" size="5" value="0" name="17" class="qt_1" id="qt_117"></td>
+			<td id="pw_117">3402</td>
+			<td id="ar_117">2048</td>
+			<td id="sh_117">30</td>
+			<td class="right-side" id="rs_117" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Leviathan</td>
+			<td><input type="text" size="5" value="0" name="18" class="qt_1" id="qt_118"></td>
+			<td id="pw_118">10000</td>
+			<td id="ar_118">6600</td>
+			<td id="sh_118">40</td>
+			<td class="right-side" id="rs_118" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Death Star</td>
+			<td><input type="text" size="5" value="0" name="19" class="qt_1" id="qt_119"></td>
+			<td id="pw_119">25500</td>
+			<td id="ar_119">13500</td>
+			<td id="sh_119">60</td>
+			<td class="right-side" id="rs_119" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td colspan="6" class="content separator"><br></td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Barracks</td>
+			<td><input type="text" size="5" value="0" name="20" class="qt_1" id="qt_120"></td>
+			<td id="pw_120">4</td>
+			<td id="ar_120">4</td>
+			<td id="sh_120" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_120" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Laser Turrets</td>
+			<td><input type="text" size="5" value="0" name="21" class="qt_1" id="qt_121"></td>
+			<td id="pw_121">8</td>
+			<td id="ar_121">8</td>
+			<td id="sh_121" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_121" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Missile Turrets</td>
+			<td><input type="text" size="5" value="0" name="22" class="qt_1" id="qt_122"></td>
+			<td id="pw_122">16</td>
+			<td id="ar_122">16</td>
+			<td id="sh_122" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_122" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Plasma Turrets</td>
+			<td><input type="text" size="5" value="0" name="23" class="qt_1" id="qt_123"></td>
+			<td id="pw_123">24</td>
+			<td id="ar_123">24</td>
+			<td id="sh_123" style="color: rgb(13, 20, 26); ">0</td>
+			<td class="right-side" id="rs_123" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion Turrets</td>
+			<td><input type="text" size="5" value="0" name="24" class="qt_1" id="qt_124"></td>
+			<td id="pw_124">32</td>
+			<td id="ar_124">32</td>
+			<td id="sh_124">2</td>
+			<td class="right-side" id="rs_124" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Photon Turrets</td>
+			<td><input type="text" size="5" value="0" name="25" class="qt_1" id="qt_125"></td>
+			<td id="pw_125">64</td>
+			<td id="ar_125">64</td>
+			<td id="sh_125">6</td>
+			<td class="right-side" id="rs_125" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Disruptor Turrets</td>
+			<td><input type="text" size="5" value="0" name="26" class="qt_1" id="qt_126"></td>
+			<td id="pw_126">256</td>
+			<td id="ar_126">256</td>
+			<td id="sh_126">8</td>
+			<td class="right-side" id="rs_126" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Deflection Shields</td>
+			<td><input type="text" size="5" value="0" name="27" class="qt_1" id="qt_127"></td>
+			<td id="pw_127">2</td>
+			<td id="ar_127">512</td>
+			<td id="sh_127">16</td>
+			<td class="right-side" id="rs_127" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Planetary Shields</td>
+			<td><input type="text" size="5" value="0" name="28" class="qt_1" id="qt_128"></td>
+			<td id="pw_128">4</td>
+			<td id="ar_128">2048</td>
+			<td id="sh_128">20</td>
+			<td class="right-side" id="rs_128" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Planetary Ring</td>
+			<td><input type="text" size="5" value="0" name="29" class="qt_1" id="qt_129"></td>
+			<td id="pw_129">2048</td>
+			<td id="ar_129">1024</td>
+			<td id="sh_129">12</td>
+			<td class="right-side" id="rs_129" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+			</tbody>
+	<tfoot>
+		<tr><td colspan="6" class="footer"></td></tr>
+	</tfoot>
+</table>
+
+<table id="DEFFleet">
+	<thead>
+		<tr>
+			<th class="header" colspan="6">DEFENDER'S FLEET</th>
+		</tr>
+	</thead>
+  <tbody>
+		<tr class="section">
+			<th class="left-side" width="30%">Unit</th>
+			<th width="15%">Qty</th>
+			<th width="15%">Pwr</th>
+			<th width="15%">Armr</th>
+			<th width="10%">Shld</th>
+			<th class="right-side" width="15%">Rslt</th>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Fighters</td>
+			<td><input type="text" size="5" value="0" name="0" class="qt_2" id="qt_20"></td>
+			<td><input type="text" size="5" value="2" name="0" class="pw_2" id="pw_20" style="color: white; "></td>
+			<td><input type="text" size="5" value="2" name="0" class="ar_2" id="ar_20" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_20" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Bombers</td>
+			<td><input type="text" size="5" value="0" name="1" class="qt_2" id="qt_21"></td>
+			<td><input type="text" size="5" value="4" name="1" class="pw_2" id="pw_21" style="color: white; "></td>
+			<td><input type="text" size="5" value="2" name="1" class="ar_2" id="ar_21" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_21" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Heavy Bombers</td>
+			<td><input type="text" size="5" value="0" name="2" class="qt_2" id="qt_22"></td>
+			<td><input type="text" size="5" value="10" name="2" class="pw_2" id="pw_22" style="color: white; "></td>
+			<td><input type="text" size="5" value="4" name="2" class="ar_2" id="ar_22" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_22" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion Bombers</td>
+			<td><input type="text" size="5" value="0" name="3" class="qt_2" id="qt_23"></td>
+			<td><input type="text" size="5" value="12" name="3" class="pw_2" id="pw_23" style="color: white; "></td>
+			<td><input type="text" size="5" value="4" name="3" class="ar_2" id="ar_23" style="color: white; "></td>
+						<td><input type="text" size="5" value="1" name="3" class="sh_2" id="sh_23" style="color: white; "></td>
+						<td class="right-side" id="rs_23" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Corvette</td>
+			<td><input type="text" size="5" value="0" name="4" class="qt_2" id="qt_24"></td>
+			<td><input type="text" size="5" value="4" name="4" class="pw_2" id="pw_24" style="color: white; "></td>
+			<td><input type="text" size="5" value="4" name="4" class="ar_2" id="ar_24" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_24" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Recycler</td>
+			<td><input type="text" size="5" value="0" name="5" class="qt_2" id="qt_25"></td>
+			<td><input type="text" size="5" value="2" name="5" class="pw_2" id="pw_25" style="color: white; "></td>
+			<td><input type="text" size="5" value="2" name="5" class="ar_2" id="ar_25" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_25" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Destroyer</td>
+			<td><input type="text" size="5" value="0" name="6" class="qt_2" id="qt_26"></td>
+			<td><input type="text" size="5" value="8" name="6" class="pw_2" id="pw_26" style="color: white; "></td>
+			<td><input type="text" size="5" value="8" name="6" class="ar_2" id="ar_26" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_26" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Frigate</td>
+			<td><input type="text" size="5" value="0" name="7" class="qt_2" id="qt_27"></td>
+			<td><input type="text" size="5" value="12" name="7" class="pw_2" id="pw_27" style="color: white; "></td>
+			<td><input type="text" size="5" value="12" name="7" class="ar_2" id="ar_27" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_27" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion Frigate</td>
+			<td><input type="text" size="5" value="0" name="8" class="qt_2" id="qt_28"></td>
+			<td><input type="text" size="5" value="14" name="8" class="pw_2" id="pw_28" style="color: white; "></td>
+			<td><input type="text" size="5" value="12" name="8" class="ar_2" id="ar_28" style="color: white; "></td>
+						<td><input type="text" size="5" value="1" name="8" class="sh_2" id="sh_28" style="color: white; "></td>
+						<td class="right-side" id="rs_28" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Scout Ship</td>
+			<td><input type="text" size="5" value="0" name="9" class="qt_2" id="qt_29"></td>
+			<td><input type="text" size="5" value="1" name="9" class="pw_2" id="pw_29" style="color: white; "></td>
+			<td><input type="text" size="5" value="2" name="9" class="ar_2" id="ar_29" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_29" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Outpost Ship</td>
+			<td><input type="text" size="5" value="0" name="10" class="qt_2" id="qt_210"></td>
+			<td><input type="text" size="5" value="2" name="10" class="pw_2" id="pw_210" style="color: white; "></td>
+			<td><input type="text" size="5" value="4" name="10" class="ar_2" id="ar_210" style="color: white; "></td>
+						<td></td>
+						<td class="right-side" id="rs_210" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Cruiser</td>
+			<td><input type="text" size="5" value="0" name="11" class="qt_2" id="qt_211"></td>
+			<td><input type="text" size="5" value="24" name="11" class="pw_2" id="pw_211" style="color: white; "></td>
+			<td><input type="text" size="5" value="24" name="11" class="ar_2" id="ar_211" style="color: white; "></td>
+						<td><input type="text" size="5" value="2" name="11" class="sh_2" id="sh_211" style="color: white; "></td>
+						<td class="right-side" id="rs_211" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Carrier</td>
+			<td><input type="text" size="5" value="0" name="12" class="qt_2" id="qt_212"></td>
+			<td><input type="text" size="5" value="12" name="12" class="pw_2" id="pw_212" style="color: white; "></td>
+			<td><input type="text" size="5" value="24" name="12" class="ar_2" id="ar_212" style="color: white; "></td>
+						<td><input type="text" size="5" value="2" name="12" class="sh_2" id="sh_212" style="color: white; "></td>
+						<td class="right-side" id="rs_212" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Heavy Cruiser</td>
+			<td><input type="text" size="5" value="0" name="13" class="qt_2" id="qt_213"></td>
+			<td><input type="text" size="5" value="48" name="13" class="pw_2" id="pw_213" style="color: white; "></td>
+			<td><input type="text" size="5" value="48" name="13" class="ar_2" id="ar_213" style="color: white; "></td>
+						<td><input type="text" size="5" value="4" name="13" class="sh_2" id="sh_213" style="color: white; "></td>
+						<td class="right-side" id="rs_213" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Battleship</td>
+			<td><input type="text" size="5" value="0" name="14" class="qt_2" id="qt_214"></td>
+			<td><input type="text" size="5" value="168" name="14" class="pw_2" id="pw_214" style="color: white; "></td>
+			<td><input type="text" size="5" value="128" name="14" class="ar_2" id="ar_214" style="color: white; "></td>
+						<td><input type="text" size="5" value="10" name="14" class="sh_2" id="sh_214" style="color: white; "></td>
+						<td class="right-side" id="rs_214" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Fleet Carrier</td>
+			<td><input type="text" size="5" value="0" name="15" class="qt_2" id="qt_215"></td>
+			<td><input type="text" size="5" value="64" name="15" class="pw_2" id="pw_215" style="color: white; "></td>
+			<td><input type="text" size="5" value="96" name="15" class="ar_2" id="ar_215" style="color: white; "></td>
+						<td><input type="text" size="5" value="8" name="15" class="sh_2" id="sh_215" style="color: white; "></td>
+						<td class="right-side" id="rs_215" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Dreadnought</td>
+			<td><input type="text" size="5" value="0" name="16" class="qt_2" id="qt_216"></td>
+			<td><input type="text" size="5" value="756" name="16" class="pw_2" id="pw_216" style="color: white; "></td>
+			<td><input type="text" size="5" value="512" name="16" class="ar_2" id="ar_216" style="color: white; "></td>
+						<td><input type="text" size="5" value="20" name="16" class="sh_2" id="sh_216" style="color: white; "></td>
+						<td class="right-side" id="rs_216" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Titan</td>
+			<td><input type="text" size="5" value="0" name="17" class="qt_2" id="qt_217"></td>
+			<td><input type="text" size="5" value="3402" name="17" class="pw_2" id="pw_217" style="color: white; "></td>
+			<td><input type="text" size="5" value="2048" name="17" class="ar_2" id="ar_217" style="color: white; "></td>
+						<td><input type="text" size="5" value="30" name="17" class="sh_2" id="sh_217" style="color: white; "></td>
+						<td class="right-side" id="rs_217" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Leviathan</td>
+			<td><input type="text" size="5" value="0" name="18" class="qt_2" id="qt_218"></td>
+			<td><input type="text" size="5" value="10000" name="18" class="pw_2" id="pw_218" style="color: white; "></td>
+			<td><input type="text" size="5" value="6600" name="18" class="ar_2" id="ar_218" style="color: white; "></td>
+						<td><input type="text" size="5" value="40" name="18" class="sh_2" id="sh_218" style="color: white; "></td>
+						<td class="right-side" id="rs_218" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Death Star</td>
+			<td><input type="text" size="5" value="0" name="19" class="qt_2" id="qt_219"></td>
+			<td><input type="text" size="5" value="25500" name="19" class="pw_2" id="pw_219" style="color: white; "></td>
+			<td><input type="text" size="5" value="13500" name="19" class="ar_2" id="ar_219" style="color: white; "></td>
+						<td><input type="text" size="5" value="60" name="19" class="sh_2" id="sh_219" style="color: white; "></td>
+						<td class="right-side" id="rs_219" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td colspan="6" class="content separator"><br></td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Barracks</td>
+			<td><input type="text" size="5" value="0" name="20" class="qt_2" id="qt_220"></td>
+			<td><input type="text" size="5" value="4" name="20" class="pw_2" id="pw_220" style="color: white; "></td>
+			<td><input type="text" size="5" value="4" name="20" class="ar_2" id="ar_220" style="color: white; "></td>
+						<td><input type="text" size="5" value="" name="20" class="sh_2" id="sh_220"></td>
+						<td class="right-side" id="rs_220" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Laser Turrets</td>
+			<td><input type="text" size="5" value="0" name="21" class="qt_2" id="qt_221"></td>
+			<td><input type="text" size="5" value="8" name="21" class="pw_2" id="pw_221" style="color: white; "></td>
+			<td><input type="text" size="5" value="8" name="21" class="ar_2" id="ar_221" style="color: white; "></td>
+						<td><input type="text" size="5" value="" name="21" class="sh_2" id="sh_221"></td>
+						<td class="right-side" id="rs_221" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Missile Turrets</td>
+			<td><input type="text" size="5" value="0" name="22" class="qt_2" id="qt_222"></td>
+			<td><input type="text" size="5" value="16" name="22" class="pw_2" id="pw_222" style="color: white; "></td>
+			<td><input type="text" size="5" value="16" name="22" class="ar_2" id="ar_222" style="color: white; "></td>
+						<td><input type="text" size="5" value="" name="22" class="sh_2" id="sh_222"></td>
+						<td class="right-side" id="rs_222" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Plasma Turrets</td>
+			<td><input type="text" size="5" value="0" name="23" class="qt_2" id="qt_223"></td>
+			<td><input type="text" size="5" value="24" name="23" class="pw_2" id="pw_223" style="color: white; "></td>
+			<td><input type="text" size="5" value="24" name="23" class="ar_2" id="ar_223" style="color: white; "></td>
+						<td><input type="text" size="5" value="" name="23" class="sh_2" id="sh_223"></td>
+						<td class="right-side" id="rs_223" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Ion Turrets</td>
+			<td><input type="text" size="5" value="0" name="24" class="qt_2" id="qt_224"></td>
+			<td><input type="text" size="5" value="32" name="24" class="pw_2" id="pw_224" style="color: white; "></td>
+			<td><input type="text" size="5" value="32" name="24" class="ar_2" id="ar_224" style="color: white; "></td>
+						<td><input type="text" size="5" value="2" name="24" class="sh_2" id="sh_224" style="color: white; "></td>
+						<td class="right-side" id="rs_224" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Photon Turrets</td>
+			<td><input type="text" size="5" value="0" name="25" class="qt_2" id="qt_225"></td>
+			<td><input type="text" size="5" value="64" name="25" class="pw_2" id="pw_225" style="color: white; "></td>
+			<td><input type="text" size="5" value="64" name="25" class="ar_2" id="ar_225" style="color: white; "></td>
+						<td><input type="text" size="5" value="6" name="25" class="sh_2" id="sh_225" style="color: white; "></td>
+						<td class="right-side" id="rs_225" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Disruptor Turrets</td>
+			<td><input type="text" size="5" value="0" name="26" class="qt_2" id="qt_226"></td>
+			<td><input type="text" size="5" value="256" name="26" class="pw_2" id="pw_226" style="color: white; "></td>
+			<td><input type="text" size="5" value="256" name="26" class="ar_2" id="ar_226" style="color: white; "></td>
+						<td><input type="text" size="5" value="8" name="26" class="sh_2" id="sh_226" style="color: white; "></td>
+						<td class="right-side" id="rs_226" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Deflection Shields</td>
+			<td><input type="text" size="5" value="0" name="27" class="qt_2" id="qt_227"></td>
+			<td><input type="text" size="5" value="2" name="27" class="pw_2" id="pw_227" style="color: white; "></td>
+			<td><input type="text" size="5" value="521" name="27" class="ar_2" id="ar_227" style="color: white; "></td>
+						<td><input type="text" size="5" value="16" name="27" class="sh_2" id="sh_227" style="color: white; "></td>
+						<td class="right-side" id="rs_227" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Planetary Shields</td>
+			<td><input type="text" size="5" value="0" name="28" class="qt_2" id="qt_228"></td>
+			<td><input type="text" size="5" value="4" name="28" class="pw_2" id="pw_228" style="color: white; "></td>
+			<td><input type="text" size="5" value="2048" name="28" class="ar_2" id="ar_228" style="color: white; "></td>
+						<td><input type="text" size="5" value="20" name="28" class="sh_2" id="sh_228" style="color: white; "></td>
+						<td class="right-side" id="rs_228" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+				<tr>
+			<td class="left-side" align="left">Planetary Ring</td>
+			<td><input type="text" size="5" value="0" name="29" class="qt_2" id="qt_229"></td>
+			<td><input type="text" size="5" value="2048" name="29" class="pw_2" id="pw_229" style="color: white; "></td>
+			<td><input type="text" size="5" value="1024" name="29" class="ar_2" id="ar_229" style="color: white; "></td>
+						<td><input type="text" size="5" value="12" name="29" class="sh_2" id="sh_229" style="color: white; "></td>
+						<td class="right-side" id="rs_229" style="color: rgb(13, 20, 26); ">0</td>
+		</tr>
+			</tbody>
+	<tfoot>
+		<tr><td colspan="6" class="footer"></td></tr>
+	</tfoot>
+</table>
+
+<table id="finalReport">
+	<thead>
+		<tr>
+			<th class="header" colspan="4">FINAL REPORT</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="section">
+			<th class="left-side" width="50%" colspan="2">Attacker's Fleet</th>
+			<th class="right-side" width="50%" colspan="2">Defender's Fleet</th>
+		</tr>
+		<tr>
+			<td class="left-side">Losses</td>
+			<td id="loss_1">0</td>
+			<td>Losses</td>
+			<td class="right-side" id="loss_2">0</td>
+		</tr>
+		<tr>
+			<td class="left-side">Repair Cost</td>
+			<td id="repair">0</td>
+			<td>Debris</td>
+			<td class="right-side" id="debris">0</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="content separator"><br></td>
+		</tr>
+		<tr>
+			<td class="left-side" colspan="2">Ratio</td>
+			<td class="right-side" colspan="2" id="ratio">-</td>
+		</tr>
+		<tr>
+			<td class="left-side" colspan="2">Total Destruction</td>
+			<td class="right-side" colspan="2" id="totald">0</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><td colspan="6" class="footer"></td></tr>
+	</tfoot>
+</table>
+
+<div class="overlay" id="pastDataOverlay" align="center"><a class="close"></a>
+	<p align="center" class="header">Past your data</p>
+	<textarea id="pastDataInput" style="width:560px; margin-top:10px;height:120px;"></textarea>
+	<br>
+	<br>
+	<input type="button" value="Past" id="pastDataSubmit" style="cursor:pointer;">
+</div>
+<input type="hidden" id="history">
+
+	</div>
+	<div class="footer">
+		<p>AEProject - Copyright © 2006 - 2012 by Guillaume Leonhart</p>
+		<br>
+		<p>
+			<a href="http://validator.w3.org/check?uri=referer">
+				<img src="images/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88">
+			</a>
+		</p>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="scripts/battle.calculator.js"></script>
+	<script type="text/javascript" async="true" src="scripts/ga.js"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-4258818-3']);
+		_gaq.push(['_setDomainName', '.aeproject.org']);
+		_gaq.push(['_setAllowHash', false]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body></html>
